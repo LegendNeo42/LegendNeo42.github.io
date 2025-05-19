@@ -97,30 +97,32 @@
           document.getElementById(target).classList.remove("hidden");
         });
       });
+      // Lightbox-Funktion
+      document.addEventListener("DOMContentLoaded", () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close-btn");
+        const images = document.querySelectorAll(".clickable-image");
 
-      // Lightbox
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".close-btn");
-      const images = document.querySelectorAll(".clickable-image");
-
-      images.forEach((img) => {
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.src;
-          lightbox.classList.remove("hidden");
+        images.forEach((img) => {
+          img.addEventListener("click", () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove("hidden");
+          });
         });
-      });
 
-      closeBtn.addEventListener("click", () => {
-        lightbox.classList.add("hidden");
-        lightboxImg.src = "";
-      });
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
+        closeBtn.addEventListener("click", () => {
           lightbox.classList.add("hidden");
           lightboxImg.src = "";
-        }
+        });
+
+        // Schließen bei Klick auf Hintergrund
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) {
+            lightbox.classList.add("hidden");
+            lightboxImg.src = "";
+          }
+        });
       });
     </script>
   </body>
