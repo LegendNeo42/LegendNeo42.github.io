@@ -13,10 +13,10 @@
   </header>
 
   <nav>
-    <button onclick="showSection('start')">Start</button>
-    <button onclick="showSection('galerie')">Galerie</button>
-    <button onclick="showSection('ueber')">Über mich</button>
-    <button onclick="showSection('kontakt')">Kontakt</button>
+    <button data-section="start">Start</button>
+    <button data-section="galerie">Galerie</button>
+    <button data-section="ueber">Über mich</button>
+    <button data-section="kontakt">Kontakt</button>
   </nav>
 
   <main>
@@ -25,26 +25,21 @@
       <p>Hier findest du handgemalte Kunstwerke von Tine.</p>
     </section>
 
-    <section id="galerie" class="content-section" style="display: none;">
+    <section id="galerie" class="content-section hidden">
       <h2>Galerie</h2>
       <div class="gallery">
-        <img src="Pictures/Pic1.jpg" alt="Kunstwerk 1" />
-        <img src="Pictures/Pic2.jpg" alt="Kunstwerk 2" />
-        <img src="Pictures/Pic3.jpg" alt="Kunstwerk 3" />
-        <img src="Pictures/Pic4.jpg" alt="Kunstwerk 4" />
-        <img src="Pictures/Pic5.jpg" alt="Kunstwerk 5" />
-        <img src="Pictures/Pic6.jpg" alt="Kunstwerk 6" />
-        <img src="Pictures/Pic7.jpg" alt="Kunstwerk 7" />
-
+        <img src="Bilder/bild1.jpg" alt="Kunstwerk 1" />
+        <img src="Bilder/bild2.jpg" alt="Kunstwerk 2" />
+        <img src="Bilder/bild3.jpg" alt="Kunstwerk 3" />
       </div>
     </section>
 
-    <section id="ueber" class="content-section" style="display: none;">
+    <section id="ueber" class="content-section hidden">
       <h2>Über mich</h2>
       <p>Ich bin Tine, eine leidenschaftliche Künstlerin aus Bayern.</p>
     </section>
 
-    <section id="kontakt" class="content-section" style="display: none;">
+    <section id="kontakt" class="content-section hidden">
       <h2>Kontakt</h2>
       <p>Schreib mir gerne: tine@example.de</p>
     </section>
@@ -55,11 +50,18 @@
   </footer>
 
   <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.content-section');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
+    const buttons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('.content-section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-section');
+        sections.forEach(section => {
+          section.classList.add('hidden');
+        });
+        document.getElementById(target).classList.remove('hidden');
+      });
+    });
   </script>
 </body>
 </html>
