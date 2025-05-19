@@ -28,20 +28,14 @@
     <section id="galerie" class="content-section hidden">
       <h2>Galerie</h2>
       <div class="gallery">
-        <img src="docs/assets/images/Pic1.jpg" alt="Kunstwerk 1" />
-        <img src="docs/assets/images/Pic2.jpg" alt="Kunstwerk 2" />
-        <img src="docs/assets/images/Pic3.jpg" alt="Kunstwerk 3" />
-        <img src="docs/assets/images/Pic4.jpg" alt="Kunstwerk 4" />
-        <img src="docs/assets/images/Pic5.jpg" alt="Kunstwerk 5" />
-        <img src="docs/assets/images/Pic6.jpg" alt="Kunstwerk 6" />
-        <img src="docs/assets/images/Pic7.jpg" alt="Kunstwerk 7" />
-        <img src="docs/assets/images/Pic1.jpg" alt="Kunstwerk 1" />
-        <img src="docs/assets/images/Pic2.jpg" alt="Kunstwerk 2" />
-        <img src="docs/assets/images/Pic3.jpg" alt="Kunstwerk 3" />
-        <img src="docs/assets/images/Pic4.jpg" alt="Kunstwerk 4" />
-        <img src="docs/assets/images/Pic5.jpg" alt="Kunstwerk 5" />
-        <img src="docs/assets/images/Pic6.jpg" alt="Kunstwerk 6" />
-        <img src="docs/assets/images/Pic7.jpg" alt="Kunstwerk 7" />
+        <img src="docs/assets/images/Pic1.jpg" alt="Kunstwerk 1" class="clickable-image" />
+        <img src="docs/assets/images/Pic2.jpg" alt="Kunstwerk 2" class="clickable-image" />
+        <img src="docs/assets/images/Pic3.jpg" alt="Kunstwerk 3" class="clickable-image" />
+        <img src="docs/assets/images/Pic4.jpg" alt="Kunstwerk 4" class="clickable-image" />
+        <img src="docs/assets/images/Pic5.jpg" alt="Kunstwerk 5" class="clickable-image" />
+        <img src="docs/assets/images/Pic6.jpg" alt="Kunstwerk 6" class="clickable-image" />
+        <img src="docs/assets/images/Pic7.jpg" alt="Kunstwerk 7" class="clickable-image" />
+
       </div>
     </section>
 
@@ -55,6 +49,11 @@
       <p>Schreib mir gerne: tine@example.de</p>
     </section>
   </main>
+
+  <div id="lightbox" class="hidden">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Großansicht" />
+  </div>
 
   <footer>
     &copy; 2025 Tines Kunst. Alle Rechte vorbehalten.
@@ -73,6 +72,32 @@
         document.getElementById(target).classList.remove('hidden');
       });
     });
+
+    // Lightbox-Funktion
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close-btn');
+  const images = document.querySelectorAll('.clickable-image');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove('hidden');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+    lightboxImg.src = '';
+  });
+
+  // Optional: Schließen bei Klick außerhalb des Bilds
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+    }
+  });
   </script>
 </body>
 </html>

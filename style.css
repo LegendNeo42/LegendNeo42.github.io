@@ -62,8 +62,45 @@ body {
     border: 2px solid #f28ab2;
     border-radius: 5px;
   }
+
+  /* Lightbox Overlay */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px #fff;
+    border-radius: 8px;
+  }
+  
+  #lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
   
   .hidden {
     display: none;
   }
   
+  .clickable-image {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .clickable-image:hover {
+    transform: scale(1.02);
+  }
