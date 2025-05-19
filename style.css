@@ -62,25 +62,29 @@ body {
     border: 2px solid #f28ab2;
     border-radius: 5px;
   }
-
-  /* Lightbox Overlay */
-#lightbox {
+  
+  .hidden {
+    display: none;
+  }
+  
+  #lightbox {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 9999;
   }
   
   #lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 0 20px #fff;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 0 30px #000;
     border-radius: 8px;
   }
   
@@ -91,6 +95,7 @@ body {
     font-size: 40px;
     color: white;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .hidden {
@@ -100,7 +105,11 @@ body {
   .clickable-image {
     cursor: pointer;
     transition: transform 0.2s;
+    max-width: 200px;
+    margin: 10px;
   }
+  
   .clickable-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
+ 
