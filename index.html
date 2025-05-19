@@ -4,43 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tines Kunst</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
-    }
-    header {
-      background: #f28ab2;
-      padding: 1rem;
-      text-align: center;
-      color: white;
-    }
-    nav {
-      background: #fff;
-      padding: 0.5rem;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #f28ab2;
-      text-decoration: none;
-    }
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-    footer {
-      background: #eee;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -49,20 +13,53 @@
   </header>
 
   <nav>
-    <a href="#">Start</a>
-    <a href="#">Galerie</a>
-    <a href="#">Über mich</a>
-    <a href="#">Kontakt</a>
+    <button onclick="showSection('start')">Start</button>
+    <button onclick="showSection('galerie')">Galerie</button>
+    <button onclick="showSection('ueber')">Über mich</button>
+    <button onclick="showSection('kontakt')">Kontakt</button>
   </nav>
 
   <main>
-    <h2>Willkommen!</h2>
-    <p>Hier findest du handgemalte Kunstwerke von Tine.</p>
-    <p>Bald gibt's mehr zu sehen – schau wieder vorbei!</p>
+    <section id="start" class="content-section">
+      <h2>Willkommen!</h2>
+      <p>Hier findest du handgemalte Kunstwerke von Tine.</p>
+    </section>
+
+    <section id="galerie" class="content-section" style="display: none;">
+      <h2>Galerie</h2>
+      <div class="gallery">
+        <img src="Pictures/Pic1.jpg" alt="Kunstwerk 1" />
+        <img src="Pictures/Pic2.jpg" alt="Kunstwerk 2" />
+        <img src="Pictures/Pic3.jpg" alt="Kunstwerk 3" />
+        <img src="Pictures/Pic4.jpg" alt="Kunstwerk 4" />
+        <img src="Pictures/Pic5.jpg" alt="Kunstwerk 5" />
+        <img src="Pictures/Pic6.jpg" alt="Kunstwerk 6" />
+        <img src="Pictures/Pic7.jpg" alt="Kunstwerk 7" />
+
+      </div>
+    </section>
+
+    <section id="ueber" class="content-section" style="display: none;">
+      <h2>Über mich</h2>
+      <p>Ich bin Tine, eine leidenschaftliche Künstlerin aus Bayern.</p>
+    </section>
+
+    <section id="kontakt" class="content-section" style="display: none;">
+      <h2>Kontakt</h2>
+      <p>Schreib mir gerne: tine@example.de</p>
+    </section>
   </main>
 
   <footer>
     &copy; 2025 Tines Kunst. Alle Rechte vorbehalten.
   </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
