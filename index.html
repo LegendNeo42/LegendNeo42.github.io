@@ -85,29 +85,36 @@
     <footer>&copy; 2025 Tines Kunst. Alle Rechte vorbehalten.</footer>
 
     <script>
-      const buttons = document.querySelectorAll("nav button");
-      const sections = document.querySelectorAll(".content-section");
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const target = button.getAttribute("data-section");
-          sections.forEach((section) => {
-            section.classList.add("hidden");
-          });
-          document.getElementById(target).classList.remove("hidden");
-        });
-      });
-      // Lightbox-Funktion
       document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll("nav button");
+        const sections = document.querySelectorAll(".content-section");
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const closeBtn = document.querySelector(".close-btn");
-        const images = document.querySelectorAll(".clickable-image");
 
-        images.forEach((img) => {
-          img.addEventListener("click", () => {
-            lightboxImg.src = img.src;
-            lightbox.classList.remove("hidden");
+        function setupLightbox() {
+          const images = document.querySelectorAll(".clickable-image");
+          images.forEach((img) => {
+            img.addEventListener("click", () => {
+              lightboxImg.src = img.src;
+              lightbox.classList.remove("hidden");
+            });
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const target = button.getAttribute("data-section");
+            sections.forEach((section) => {
+              section.classList.add("hidden");
+            });
+            const visibleSection = document.getElementById(target);
+            visibleSection.classList.remove("hidden");
+
+            // Setup Lightbox nur wenn Galerie aktiv
+            if (target === "galerie") {
+              setupLightbox();
+            }
           });
         });
 
@@ -116,13 +123,17 @@
           lightboxImg.src = "";
         });
 
-        // Schließen bei Klick auf Hintergrund
         lightbox.addEventListener("click", (e) => {
           if (e.target === lightbox) {
             lightbox.classList.add("hidden");
             lightboxImg.src = "";
           }
         });
+
+        // Initial: falls Galerie zuerst sichtbar ist
+        if (!document.getElementById("galerie").classList.contains("hidden")) {
+          setupLightbox();
+        }
       });
     </script>
   </body>
