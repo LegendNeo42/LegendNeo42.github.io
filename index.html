@@ -24,97 +24,42 @@
         <h2>Willkommen!</h2>
         <p>Hier findest du handgemalte Kunstwerke von Tine.</p>
       </section>
-<!-- Hier die Bilder einfügen-->
+
       <section id="galerie" class="content-section hidden">
         <h2>Galerie</h2>
         <div class="gallery">
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic1.jpg"
-              alt="Kunstwerk 1"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 1</h3>
-              <p>120 €</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic1.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic2.jpg"
-              alt="Kunstwerk 2"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 2</h3>
-              <p>Verkauft</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic2.jpg" alt="Kunstwerk 2" class="clickable-image" />
+            <p class="info">„Herbstlicht“ – 140 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic3.jpg"
-              alt="Kunstwerk 3"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 3</h3>
-              <p>VB </p>
-            </div>
+          
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic3.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic4.jpg"
-              alt="Kunstwerk 4"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 4</h3>
-              <p>320 €</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic4.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic5.jpg"
-              alt="Kunstwerk 5"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 5</h3>
-              <p>8200 €</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic5.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic6.jpg"
-              alt="Kunstwerk 6"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 6</h3>
-              <p>1 Mio €</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic6.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic7.jpg"
-              alt="Kunstwerk 7"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Kunstwerk 7</h3>
-              <p>5000 €</p>
-            </div>
+          <div class="gallery-item">
+            <img src="docs/assets/images/Pic7.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
-          <div class="artwork">
-            <img
-              src="docs/assets/images/Pic8.jpg"
-              alt="Kunstwerk 8"
-              class="clickable-image"
-            />
-            <div class="artwork-info">
-              <h3>Gecko</h3>
-              <p>2 Mio €</p>
-            </div>
+           <div class="gallery-item">
+            <img src="docs/assets/images/Pic8.jpg" alt="Kunstwerk 1" class="clickable-image" />
+            <p class="info">„Rote Blüte“ – 120 €</p>
           </div>
         </div>
       </section>
@@ -164,7 +109,6 @@
             const visibleSection = document.getElementById(target);
             visibleSection.classList.remove("hidden");
 
-            // Setup Lightbox nur wenn Galerie aktiv
             if (target === "galerie") {
               setupLightbox();
             }
@@ -183,11 +127,11 @@
           }
         });
 
-        // Initial: falls Galerie zuerst sichtbar ist
         if (!document.getElementById("galerie").classList.contains("hidden")) {
           setupLightbox();
         }
       });
     </script>
+    <script src="colorscript.js"></script>
   </body>
 </html>

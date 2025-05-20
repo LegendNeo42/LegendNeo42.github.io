@@ -1,5 +1,5 @@
 .hidden {
-  display: none !important;;
+  display: none !important;
 }
 
 body {
@@ -53,17 +53,52 @@ footer {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.gallery img {
-  max-width: 200px;
-  height: auto;
-  border: 2px solid #f28ab2;
-  border-radius: 5px;
+.gallery-item {
+  position: relative;
+  padding: 0.2rem;
+  border-radius: 12x;
+  /*box-shadow: 0 1px 10px rgba(209, 95, 181, 0.863);*/
+  transition: transform 0.3s ease;
+  text-align: center;
+  overflow: hidden; /* Für abgerundete Ecken */
+  background-clip: padding-box;
+}
+
+
+
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-item img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item .info {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
 }
 
 #lightbox {
@@ -95,54 +130,4 @@ footer {
   color: white;
   cursor: pointer;
   font-weight: bold;
-}
-
-.clickable-image {
-  cursor: pointer;
-  transition: transform 0.2s;
-  max-width: 200px;
-  margin: 10px;
-}
-
-.clickable-image:hover {
-  transform: scale(1.03);
-}
-
-.artwork {
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.artwork img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border: 2px solid #f28ab2;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.artwork:hover img {
-  transform: scale(1.03);
-}
-
-.artwork-info {
-  margin-top: 0.5rem;
-  text-align: center;
-  min-height: 60px; /* gleiche Höhe für alle Texte */
-}
-
-.artwork-info h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: #222;
-}
-
-.artwork-info p {
-  margin: 0.2rem 0 0;
-  font-size: 0.9rem;
-  color: #555;
 }
