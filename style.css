@@ -108,3 +108,27 @@ footer {
 .clickable-image:hover {
   transform: scale(1.03);
 }
+
+.artwork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.artwork-info {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.artwork-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.artwork-info p {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
