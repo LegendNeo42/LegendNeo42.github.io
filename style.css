@@ -294,6 +294,98 @@ footer {
   color: #fff;
 }
 
+/*---------------------------ABOUT*--------------------------------*/
+
+.about-section {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.about-container {
+  max-width: 1000px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(5px);
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.text-box {
+  flex: 1;
+}
+
+.text-box h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+}
+
+.text-box p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  font-style: italic;
+  padding-left: 1rem;
+  border-left: 3px solid #333;
+  color: #555;
+}
+
+.kontakt-hinweis {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.kontakt-hinweis a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.behind-the-scenes {
+  margin-top: 3rem;
+}
+
+.behind-the-scenes h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.behind-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.behind-gallery img {
+  width: 100%;
+  max-width: 48%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
 /*--------------------------MEDIA-----------------------------------*/
 @media (max-width: 768px) {
   nav button {
@@ -335,6 +427,18 @@ footer {
 
   .lightbox-counter {
     font-size: 0.9rem;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portrait {
+    max-width: 100%;
+  }
+
+  .behind-gallery img {
+    max-width: 100%;
   }
 }
 

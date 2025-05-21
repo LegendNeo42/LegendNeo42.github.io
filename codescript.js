@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.querySelector(".close-btn");
+    const kontaktLink = document.getElementById("kontakt-link");
+    const kontaktButton = document.querySelector('nav button[data-section="kontakt"]');
+
+    if (kontaktLink && kontaktButton) {
+        kontaktLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            kontaktButton.click(); // Simuliere echten Button-Klick
+        });
+    }
 
     document.querySelector(".close-icon").addEventListener("click", () => {
         lightbox.classList.add("hidden");
@@ -30,15 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Tab-Wechsel-Logik
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const target = button.getAttribute("data-section");
-            sections.forEach((section) => section.classList.add("hidden"));
+            sections.forEach((section) => {
+                section.classList.add("hidden");
+            });
             document.getElementById(target).classList.remove("hidden");
 
             if (target === "galerie") {
-                setupLightbox();
+                setupLightbox(); // falls nötig
             }
         });
     });
