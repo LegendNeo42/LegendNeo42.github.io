@@ -180,3 +180,33 @@ footer {
   cursor: pointer;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+
+  nav button {
+    display: block;
+    margin: 0.5rem auto;
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .gallery-item img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  #lightbox img {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+}
