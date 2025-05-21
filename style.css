@@ -1,19 +1,30 @@
-html {
-  overflow-y: scroll;
-}
+
 
 .hidden {
   display: none !important;
 }
 
-body {
-  font-family: Arial, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
+  font-family: Arial, sans-serif;
   background: url("docs/assets/images/Leaves.jpg");
   color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 body::before {
   content: "";
   position: fixed;
@@ -190,8 +201,6 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 30px #000;
 }
-
-
 
 .close-icon {
   position: absolute;
