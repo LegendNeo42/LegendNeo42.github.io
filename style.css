@@ -272,11 +272,20 @@ footer {
     font-size: 2.5rem;
     padding: 0.5rem;
   }
+  .lightbox-content {
+    width: 90%;
+    align-items: center;
+  }
   #lightbox-img {
     max-height: 60vh;
   }
   .close-btn {
     font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    max-width: 80%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
   }
 
   .lightbox-counter {
