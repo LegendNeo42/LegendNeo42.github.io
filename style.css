@@ -414,6 +414,14 @@ blockquote {
   background-color: #ffffff33;
   border-bottom: 1px solid rgb(145, 110, 16);
   font-weight: bold;
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 225, 190, 0.7),
+    rgba(249, 194, 125, 0.9)
+  );
+  box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.1);
+  color: #a55e2f;
 }
 
   .gallery {
