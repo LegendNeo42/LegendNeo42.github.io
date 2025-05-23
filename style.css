@@ -410,6 +410,12 @@ blockquote {
     font-size: 1rem;
   }
 
+  nav button.active {
+  background-color: #ffffff33;
+  border-bottom: 1px solid rgb(145, 110, 16);
+  font-weight: bold;
+}
+
   .gallery {
     grid-template-columns: 1fr;
     gap: 1.5rem;
