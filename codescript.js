@@ -38,20 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const target = button.getAttribute("data-section");
-            sections.forEach((section) => {
-                section.classList.add("hidden");
-            });
+
+            // Sections umschalten
+            sections.forEach((section) => section.classList.add("hidden"));
             document.getElementById(target).classList.remove("hidden");
 
+            // Aktiven Button hervorheben
+            buttons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Optional Galerie-Logik
             if (target === "galerie") {
-                setupLightbox(); // falls nötig
+                setupLightbox?.(); // falls notwendig
             }
         });
     });
+    // Initial: Galerie als aktiv setzen
+    document.querySelector('button[data-section="galerie"]').classList.add("active");
 
     // Lightbox schließen
     function closeLightbox() {

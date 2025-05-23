@@ -87,6 +87,12 @@ nav button {
   transition: all 0.3s ease;
 }
 
+nav button.active {
+  background-color: #ffffff33;
+  border-bottom: 1px solid rgb(145, 110, 16);
+  font-weight: bold;
+}
+
 nav button:hover {
   transform: translateY(-2px);
   background: linear-gradient(
